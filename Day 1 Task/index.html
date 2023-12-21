@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        background-color: #F2F8FC;
+        color: darkslategrey;
+    }
+    h1{
+        font-size: 50px;
+        text-align: center;
+        text-decoration: underline;
+    }
+    h3{
+        font-size: 25px;
+        text-decoration: underline;
+
+    }
+    p{
+        font-size: 20px;
+        line-height: 1.6;
+        white-space: pre-wrap;
+    }
+</style>
+<body>
+    <article style="margin: 10%; margin-top: 50px;">
+        <h1>
+            HTTP
+        </h1>
+        <h3>
+            What is HTTP?
+        </h3>
+        <p>
+                      HTTP stands for <b><em>Hyper Text Transfer Protocol</em></b>. It's a transfer protocol between the computer and server to request and send the information. <b>For example:</b> If I search for guvi.in in the browser, it sends an HTTP request to the server and the server in back returns the files that are required to display the webpage in the browser.    
+        </p>
+        <h3>
+            HTTP 1.1
+        </h3>
+        <p>
+                       A client searches for a website, browser initiates a get request of the website to the server and the server responds to it by displaying the page. But before displaying the page, the browser intiaites a TCP(Transmission Control Protocol) connection between the client and server and requests all the files for displaying the page. So there will be a open connection between the client and server and the request and responses will go back forth in between the two until the browser has all the necessary resources to display. This HTTP 1.1 version has a con that is if the specfic request cannot retrieve the resource it will then block the queued requests. This is known as the head-of-line blocking. Multiple TCP connection has to established to reduce the HOL blocking but it takes more resources.
+        </p>
+    
+        <h3>
+            HTTP 2
+        </h3>
+        <p>
+                    In this version, the requests and responses are broken down by binary layer and encodes them into smaller packets of information which increases the data transfer in less time.
+            In the former version, multiple connection has to established to display the information. In this version, a single connection established between the server and client. In this connection, there is a multiple streams of data in which each stream has multiple messages. These each messages are split down into much smaller units called frames. These multiple frames have an identfying tag for a particular stream. Using this identfying tags, the frames leave the server in a random manner and arranges in the particular order in the client side. So this transfer happens in a parallel manner which doesn't wait for one request to finish which eliminates the HOL blocking issue. Since it uses a single TCP connection, it reduces operational cost.
+                There is an optimisation of displaying the webpage by prioritizing which should be loaded first on the webpage. So you don't need to load the elements at the bottom of page which is not the landing page. So they gave each stream a tag and the prioritizing weight based on that server returns the data. Likewise the runtime has been reduced to load the page and have more control over rendering the webpage 
+            <br>
+    
+        </p>
+    
+    </article>
+    
+</body>
